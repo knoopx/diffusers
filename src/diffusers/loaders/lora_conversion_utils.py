@@ -267,7 +267,7 @@ def _convert_kohya_lora_to_diffusers(state_dict, unet_name="unet", text_encoder_
             network_alphas.update({new_name: alpha})
 
     if len(state_dict) > 0:
-        raise ValueError(f"The following keys have not been correctly be renamed: \n\n {', '.join(state_dict.keys())}")
+        raise ValueError(f"The following keys have not been correctly renamed: \n\n {', '.join(state_dict.keys())}")
 
     logger.info("Kohya-style checkpoint detected.")
     unet_state_dict = {f"{unet_name}.{module_name}": params for module_name, params in unet_state_dict.items()}
